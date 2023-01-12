@@ -14,8 +14,8 @@ namespace AddressBook
                 Console.WriteLine("Select Option:\n" +
                     "1) Find the Create Contacts\n");
 
-                int option = Convert.ToInt32(Console.ReadLine());
-
+                var option = Convert.ToInt32(Console.ReadLine());
+                
                 switch (option)
                 {
                     case 1:

@@ -35,6 +35,9 @@ namespace AddressBook
             contacts.PhoneNumber = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Created new contact \n");
+           
+            person.Add(contacts);
+            Console.WriteLine("Contact added to your Address book");
 
         }
 }  }
