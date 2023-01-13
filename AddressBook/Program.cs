@@ -14,7 +14,7 @@ namespace AddressBook
                 Console.WriteLine("Select Option:\n" +
                     "1) Find the Create Contacts\n");
 
-                int option = Convert.ToInt32(Console.ReadLine());
+                var option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
                 {
@@ -26,6 +26,11 @@ namespace AddressBook
                         break;
                     case 3:
                         Person.editContact();
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter name to delete the record");
+                        string name = Console.ReadLine();
+                        Person.DeleteContact(name);
                         break;
                     default:
                         Console.WriteLine("Choose valid option");
