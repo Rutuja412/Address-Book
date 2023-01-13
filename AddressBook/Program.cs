@@ -14,12 +14,18 @@ namespace AddressBook
                 Console.WriteLine("Select Option:\n" +
                     "1) Find the Create Contacts\n");
 
-                var option = Convert.ToInt32(Console.ReadLine());
+                int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
                 {
                     case 1:
                         Person.CreateContacts();
+                        break;
+                    case 2:
+                        Person.Display();
+                        break;
+                    case 3:
+                        Person.editContact();
                         break;
                     default:
                         Console.WriteLine("Choose valid option");
