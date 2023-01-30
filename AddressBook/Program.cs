@@ -4,7 +4,7 @@ namespace AddressBook
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args, Person person)
         {
             Console.WriteLine("welcome to AddressBook");
             Person person = new Person();
@@ -31,6 +31,12 @@ namespace AddressBook
                         Console.WriteLine("Enter name to delete the record");
                         string name = Console.ReadLine();
                         Person.DeleteContact(name);
+                        break;
+                    case 5:
+                        Person.CreateDictionary();
+                        break;
+                    case 6:
+                           Person.DisplayDictionary();
                         break;
                     default:
                         Console.WriteLine("Choose valid option");

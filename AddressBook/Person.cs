@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 
 namespace AddressBook
 {
     public class Person
     {
-        public static List<Contacts> person = new List<Contacts>();
-        public static void CreateContacts()
+         List<Contacts> person = new List<Contacts>();
+        Dictionary<string, List<Contacts>> addressBook = new Dictionary<string, List<Contacts>>();
+        public void CreateContacts()
         {
             Contacts contacts = new Contacts();
             Console.WriteLine("Enter First Name");
@@ -35,12 +37,12 @@ namespace AddressBook
             contacts.PhoneNumber = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Created new contact \n");
-           
+
             person.Add(contacts);
             Console.WriteLine("Contact added to your Address book");
 
         }
-        public static void Display()
+        public  void Display()
         {
             foreach (var data in person)
             {
@@ -48,7 +50,7 @@ namespace AddressBook
                 Console.WriteLine("1.FirstName: " + data.FirstName + "2.LastName: " + data.LastName + "3.Address: " + data.Address + "4.City: " + data.City + "5.State: " + data.State + "6.Zipcode: " + data.Zipcode + "7.PhoneNumber: " + data.PhoneNumber);
             }
         }
-        public static void editContact()
+        public  void editContact()
         {
             Console.WriteLine("Enter the First Name: ");
             string name = Console.ReadLine();
@@ -110,7 +112,7 @@ namespace AddressBook
                 }
             }
         }
-        public static void DeleteContact(string name)
+        public  void DeleteContact(string name)
         {
             Contacts contacts = new Contacts();
             foreach (var data in person)
@@ -122,5 +124,5 @@ namespace AddressBook
             }
             person.Remove(contacts);
         }
-    } 
-}
+
+    }  }   
