@@ -7,9 +7,8 @@ namespace AddressBook
 {
     public class Person
     {
-         List<Contacts> person = new List<Contacts>();
-        Dictionary<string, List<Contacts>> addressBook = new Dictionary<string, List<Contacts>>();
-        public void CreateContacts()
+        public static List<Contacts> person = new List<Contacts>();
+        public static void CreateContacts()
         {
             Contacts contacts = new Contacts();
             Console.WriteLine("Enter First Name");
@@ -42,7 +41,7 @@ namespace AddressBook
             Console.WriteLine("Contact added to your Address book");
 
         }
-        public  void Display()
+        public static void Display()
         {
             foreach (var data in person)
             {
@@ -50,7 +49,7 @@ namespace AddressBook
                 Console.WriteLine("1.FirstName: " + data.FirstName + "2.LastName: " + data.LastName + "3.Address: " + data.Address + "4.City: " + data.City + "5.State: " + data.State + "6.Zipcode: " + data.Zipcode + "7.PhoneNumber: " + data.PhoneNumber);
             }
         }
-        public  void editContact()
+        public static  void editContact()
         {
             Console.WriteLine("Enter the First Name: ");
             string name = Console.ReadLine();
@@ -112,7 +111,7 @@ namespace AddressBook
                 }
             }
         }
-        public  void DeleteContact(string name)
+        public static void DeleteContact(string name)
         {
             Contacts contacts = new Contacts();
             foreach (var data in person)
@@ -124,5 +123,16 @@ namespace AddressBook
             }
             person.Remove(contacts);
         }
+        public static void AddMultipleContacts()
+        {
+            Console.WriteLine("Enter the Number of Records you want to Insert");
+            int number = (int)Convert.ToInt64(Console.ReadLine());
+            while (number > 0)
+            {
+                CreateContacts();
+                number--;
+            }
+        }
+
 
     }  }   
