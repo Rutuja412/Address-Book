@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
 
@@ -8,6 +9,7 @@ namespace AddressBook
     public class Person
     {
         public static List<Contacts> person = new List<Contacts>();
+        Dictionary<string, List<Contacts>> book = new Dictionary<string, List<Contacts>>();
         public static void CreateContacts()
         {
             Contacts contacts = new Contacts();
@@ -49,7 +51,7 @@ namespace AddressBook
                 Console.WriteLine("1.FirstName: " + data.FirstName + "2.LastName: " + data.LastName + "3.Address: " + data.Address + "4.City: " + data.City + "5.State: " + data.State + "6.Zipcode: " + data.Zipcode + "7.PhoneNumber: " + data.PhoneNumber);
             }
         }
-        public static  void editContact()
+        public static void editContact()
         {
             Console.WriteLine("Enter the First Name: ");
             string name = Console.ReadLine();
@@ -133,6 +135,38 @@ namespace AddressBook
                 number--;
             }
         }
+        public void NewUser()
+        {
+            Console.WriteLine("Enter the Bookname: ");
+            string Bookname = Console.ReadLine();
+            Console.WriteLine("Enter The Number of Contacts To Add");
+            int number = int.Parse(Console.ReadLine());
+            while (number > 0)
+            {
 
-
-    }  }   
+                number--;
+                CreateContacts();
+            }
+            book.Add(Bookname, person.ToList());
+        }
+        public void DisplayList()
+        {
+            foreach (var pair in book.Keys)
+            {
+                Console.WriteLine("Address Book Name " + pair);
+                foreach (Contacts data in book[pair])
+                {
+                    Console.WriteLine("****First Name***: " + data.FirstName);
+                    Console.WriteLine("Last Name: " + data.LastName);
+                    Console.WriteLine("Address: " + data.Address);
+                    Console.WriteLine("City : " + data.City);
+                    Console.WriteLine("State: " + data.State);
+                    Console.WriteLine("Zip : " + data.Zipcode);
+                    Console.WriteLine("Phone Number: " + data.PhoneNumber);
+                    Console.WriteLine("EmailID: " + data.Email);
+                }
+            }
+        }
+    }
+}
+  
