@@ -167,6 +167,25 @@ namespace AddressBook
                 }
             }
         }
+        public static void DuplicateContact()
+        {
+            Console.WriteLine("enter the name to check: ");
+            string personName = Console.ReadLine();
+            Console.WriteLine("Enter phonenumber");
+            int phnnum = int.Parse(Console.ReadLine());
+            bool check = person.Any(e => e.FirstName == personName && e.PhoneNumber == phnnum);
+            if (check)
+            {
+                Console.WriteLine("contact is present");
+            }
+            else
+            {
+                Console.WriteLine("Contact is not present");
+                
+            }
+        }
+
     }
 }
+      
   
