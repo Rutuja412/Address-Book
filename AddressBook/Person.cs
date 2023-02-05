@@ -48,7 +48,7 @@ namespace AddressBook
             foreach (var data in person)
             {
                 Console.WriteLine();
-                Console.WriteLine("1.FirstName: " + data.FirstName + "2.LastName: " + data.LastName + "3.Address: " + data.Address + "4.City: " + data.City + "5.State: " + data.State + "6.Zipcode: " + data.Zipcode + "7.PhoneNumber: " + data.PhoneNumber);
+                Console.WriteLine("1.FirstName: " + data.FirstName + "\t2.LastName: " + data.LastName + "\t3.Address: " + data.Address + "\t4.City: " + data.City + "\t5.State: " + data.State + "\t6.Zipcode: " + data.Zipcode + "\t7.PhoneNumber: " + data.PhoneNumber + "\t8.EmailId:" + data.Email);
             }
         }
         public static void editContact()
@@ -181,11 +181,27 @@ namespace AddressBook
             else
             {
                 Console.WriteLine("Contact is not present");
-                
+
             }
         }
+        public static void SearchPersonByCity()
+        {
+            Console.WriteLine("enter the name to search: ");
+            string personName = Console.ReadLine();
+            Console.WriteLine("enter the city to search: ");
+            string cityname = Console.ReadLine();
 
+            foreach (var data in person.FindAll(e => e.City == cityname && e.FirstName == personName))
+            {
+                Console.WriteLine("The Contact Details of " + data.City + " are\n:" + data.FirstName + " " + data.LastName + " " + data.Zipcode + " " + data.PhoneNumber);
+            }
+        }
     }
 }
+
+        
+        
+   
+
       
   
