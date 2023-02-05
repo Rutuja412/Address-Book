@@ -196,6 +196,15 @@ namespace AddressBook
                 Console.WriteLine("The Contact Details of " + data.City + " are\n:" + data.FirstName + " " + data.LastName + " " + data.Zipcode + " " + data.PhoneNumber);
             }
         }
+        public static void ViewPersonByCity()
+        {
+            Console.WriteLine("Enter city name ");
+            string city = Console.ReadLine();
+            foreach (var data in person.FindAll(e => e.City == city))
+            {
+                Console.WriteLine("The Contact Details of  person are : \n1.FirstName: " + data.FirstName + "\n2.LastName: " + data.LastName + "\n3.Address: " + data.Address + "\n4.City: " + data.City + "\n5.State: " + data.State + "\n6.Zipcode: " + data.Zipcode + "\n7.PhoneNumber: " + data.PhoneNumber + data.Email + "\n8.EmailId:");
+            }
+        }
     }
 }
 

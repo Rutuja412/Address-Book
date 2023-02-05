@@ -21,9 +21,10 @@ namespace AddressBook
                      "7) Display new list\n" +
                      "8)Check Duplicate entry\n"+
                      "9)search person by name and city name\n" +
-                     "10) Enter Correct number");     
+                     "10)View Person by city name \n" +
+                     " 11) Enter Correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
-                int count = 0;
+                
                 switch (option)
                 {
                     case 1:
@@ -58,6 +59,9 @@ namespace AddressBook
                         break;
                     case 9:
                         Person.SearchPersonByCity();
+                        break;
+                        case 10:
+                        Person.ViewPersonByCity();
                         break;
                     default:
                         Console.WriteLine("Choose valid option");
