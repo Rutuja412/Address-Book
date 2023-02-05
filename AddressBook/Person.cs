@@ -224,6 +224,17 @@ namespace AddressBook
                 Console.WriteLine("This contact is not present in AddressBook.");
             }
         }
+        public static void SortPersonName()
+        {
+            foreach (var items in person.OrderBy(e => e.FirstName))
+            {
+                Console.WriteLine("First Name: " + items.FirstName);
+                Console.WriteLine("Last Name: " + items.LastName);
+                Console.WriteLine("City : " + items.City);
+                Console.WriteLine("Zip : " + items.Zipcode);
+                Console.WriteLine("Phone Number: " + items.PhoneNumber);
+            }
+        }
     }
 }
 
