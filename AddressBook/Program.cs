@@ -24,7 +24,9 @@ namespace AddressBook
                      "10)View Person by city name \n" +
                      " 11) Count person from city name\n" +
                      "12)Sort Person\n " +
-                     "13)Enter Correct number");     
+                     "13) Sort By city name\n" +
+                     "14) Sort By Zipcode \n"+
+                     "15)Enter Correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
@@ -70,6 +72,13 @@ namespace AddressBook
                         break;
                         case 12:
                         Person.SortPersonName();
+                        break;
+                    case 13:
+                        Person.SortbyCityName();
+                        break;
+
+                    case 14:
+                        Person.SortbyZipcode();
                         break;
 
                     default:
