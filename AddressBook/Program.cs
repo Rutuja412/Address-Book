@@ -22,7 +22,8 @@ namespace AddressBook
                      "8)Check Duplicate entry\n"+
                      "9)search person by name and city name\n" +
                      "10)View Person by city name \n" +
-                     " 11) Enter Correct number");     
+                     " 11) Count person from city name\n" +
+                     "12)Enter Correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
@@ -63,6 +64,10 @@ namespace AddressBook
                         case 10:
                         Person.ViewPersonByCity();
                         break;
+                    case 11:
+                        Person.CountPerson();
+                        break;
+
                     default:
                         Console.WriteLine("Choose valid option");
                         break;
