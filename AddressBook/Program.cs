@@ -26,7 +26,9 @@ namespace AddressBook
                      "12)Sort Person\n " +
                      "13) Sort By city name\n" +
                      "14) Sort By Zipcode \n"+
-                     "15)Enter Correct number");     
+                     "15) FileIO\n" +
+                     "16) ReadAllLines\n"+
+                     "17)Enter Correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
@@ -80,6 +82,14 @@ namespace AddressBook
                     case 14:
                         Person.SortbyZipcode();
                         break;
+                    case 15:
+                        AddressbookFileIO.FileExists();
+                        break;
+
+                    case 16:
+                        AddressbookFileIO.ReadAllLines();
+                        break;
+
 
                     default:
                         Console.WriteLine("Choose valid option");
