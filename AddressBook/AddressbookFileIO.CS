@@ -32,5 +32,32 @@ namespace AddressBook
 
             Console.ReadKey();
         }
+        
+        public static void ReadFromStreamReader()
+        {
+            String path = "E:\\RFP-245\\Address-Book\\AddressBook\\ContactBook.txt";
+
+            using (StreamReader sr = File.OpenText(path))
+            {
+                String s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+
+        }
+        public static void WriteUsingStreamWriter()
+        {
+            String path = "E:\\RFP-245\\Address-Book\\AddressBook\\ContactBook.txt";
+
+            using (StreamWriter sr = File.AppendText(path))
+            {
+                sr.WriteLine("First Name :Sneha \nLastName:Sawant \nAddress:Pune \nPhoneNumber:9850786512");
+                sr.Close();
+                Console.WriteLine(File.ReadAllText(path));
+            }
+        }
     }
 }
+

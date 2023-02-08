@@ -22,13 +22,16 @@ namespace AddressBook
                      "8)Check Duplicate entry\n"+
                      "9)search person by name and city name\n" +
                      "10)View Person by city name \n" +
-                     " 11) Count person from city name\n" +
+                     "11) Count person from city name\n" +
                      "12)Sort Person\n " +
                      "13) Sort By city name\n" +
                      "14) Sort By Zipcode \n"+
                      "15) FileIO\n" +
                      "16) ReadAllLines\n"+
-                     "17)Enter Correct number");     
+                     "17)ReadFromStreamReader\n" +
+                     "18)WriteUsingStreamWriter\n"+
+                     "19)ImplementCSVDataHandling\n"+
+                     "20)Enter Correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
@@ -88,6 +91,17 @@ namespace AddressBook
 
                     case 16:
                         AddressbookFileIO.ReadAllLines();
+                        break;
+                    case 17:
+                        AddressbookFileIO.ReadFromStreamReader();
+                        break;
+
+                    case 18:
+                        AddressbookFileIO.WriteUsingStreamWriter();
+                        break;
+
+                    case 19:
+                        AddressBookCSVFile.ImplementCSVDataHandling();
                         break;
 
 
