@@ -31,7 +31,8 @@ namespace AddressBook
                      "17)ReadFromStreamReader\n" +
                      "18)WriteUsingStreamWriter\n"+
                      "19)ImplementCSVDataHandling\n"+
-                     "20)Enter Correct number");     
+                     "20)ImplementCSVToJSON\n"+
+                     "21)Enter Correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
@@ -103,7 +104,9 @@ namespace AddressBook
                     case 19:
                         AddressBookCSVFile.ImplementCSVDataHandling();
                         break;
-
+                    case 20:
+                        ReadCSV_And_WriteJSON.ImplementCSVToJSON();
+                        break;
 
                     default:
                         Console.WriteLine("Choose valid option");
