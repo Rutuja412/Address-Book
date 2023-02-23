@@ -32,7 +32,8 @@ namespace AddressBook
                      "18)WriteUsingStreamWriter\n"+
                      "19)ImplementCSVDataHandling\n"+
                      "20)ImplementCSVToJSON\n"+
-                     "21)Enter Correct number");     
+                     "21)Create Database SQL Server\n" +
+                      "22)Enter correct number");     
                 int option = Convert.ToInt32(Console.ReadLine());
                 
                 switch (option)
@@ -106,6 +107,10 @@ namespace AddressBook
                         break;
                     case 20:
                         ReadCSV_And_WriteJSON.ImplementCSVToJSON();
+                        break;
+                        case 21:
+                        AddressBookRepo repo = new AddressBookRepo();
+                        repo.Create_Database();
                         break;
 
                     default:

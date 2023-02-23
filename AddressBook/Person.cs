@@ -32,10 +32,10 @@ namespace AddressBook
             contacts.State = Console.ReadLine();
 
             Console.WriteLine("Enter Zipcode ");
-            contacts.Zipcode = Convert.ToInt32(Console.ReadLine());
+            contacts.Zipcode = Console.ReadLine();
 
             Console.WriteLine("Enter Phone Number");
-            contacts.PhoneNumber = Convert.ToInt32(Console.ReadLine());
+            contacts.PhoneNumber = Console.ReadLine();
 
             Console.WriteLine("Created new contact \n");
 
@@ -92,12 +92,12 @@ namespace AddressBook
                                 break;
 
                             case 6:
-                                int zipcode = Convert.ToInt32(Console.ReadLine());
+                                string zipcode = Console.ReadLine();
                                 data.Zipcode = zipcode;
                                 break;
 
                             case 7:
-                                int phoneNumber = Convert.ToInt32(Console.ReadLine());
+                                string phoneNumber = Console.ReadLine();
                                 data.PhoneNumber = phoneNumber;
                                 break;
 
@@ -128,7 +128,7 @@ namespace AddressBook
         public static void AddMultipleContacts()
         {
             Console.WriteLine("Enter the Number of Records you want to Insert");
-            int number = (int)Convert.ToInt64(Console.ReadLine());
+            int number = (int)Convert.ToInt32(Console.ReadLine());
             while (number > 0)
             {
                 CreateContacts();
@@ -143,8 +143,8 @@ namespace AddressBook
             int number = int.Parse(Console.ReadLine());
             while (number > 0)
             {
-
                 number--;
+
                 CreateContacts();
             }
             book.Add(Bookname, person.ToList());
@@ -172,7 +172,7 @@ namespace AddressBook
             Console.WriteLine("enter the name to check: ");
             string personName = Console.ReadLine();
             Console.WriteLine("Enter phonenumber");
-            int phnnum = int.Parse(Console.ReadLine());
+            string phnnum = Console.ReadLine();
             bool check = person.Any(e => e.FirstName == personName && e.PhoneNumber == phnnum);
             if (check)
             {
@@ -191,7 +191,7 @@ namespace AddressBook
             Console.WriteLine("enter the city to search: ");
             string cityname = Console.ReadLine();
 
-            foreach (var data in person.FindAll(e => e.City == cityname && e.FirstName == personName))
+            foreach (var data in person.FindAll(e=> e.City == cityname && e.FirstName == personName))
             {
                 Console.WriteLine("The Contact Details of " + data.City + " are\n:" + data.FirstName + " " + data.LastName + " " + data.Zipcode + " " + data.PhoneNumber);
             }

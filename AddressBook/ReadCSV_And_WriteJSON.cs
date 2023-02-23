@@ -15,7 +15,7 @@ namespace AddressBook
         {
             string importFilePath = "E:\\RFP-245\\Address-Book\\AddressBook\\Utility\\Import.csv";
             string exportFilePath = "E:\\RFP-245\\Address-Book\\AddressBook\\Utility\\ExportInfo.json";
-            using (var reader = new StreamReader(importFilePath))
+            using (var reader = new StreamReader(importFilePath))//streamreader reads character from a byte in particular encoding
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
                 var records = csv.GetRecords<Contacts>().ToList();
@@ -40,7 +40,8 @@ namespace AddressBook
                 using (StreamWriter sw = new StreamWriter(exportFilePath))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
-                    serializer.Serialize(writer, records);
+                    serializer.Serialize(writer, records); //     Serializes the specified System.Object and writes the JSON structure using the specified Newtonsoft.Json.JsonWriter.
+                    
                 }
 
             }

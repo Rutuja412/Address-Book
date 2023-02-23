@@ -16,8 +16,8 @@ namespace AddressBook
             string importFilePath = @"E:\RFP-245\Address-Book\AddressBook\Utility\Import.csv";
              string exportFilePath = @"E:\RFP-245\Address-Book\AddressBook\Utility\Export.csv";
             //reading csv file
-            using (var reader = new StreamReader(importFilePath))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var reader = new StreamReader(importFilePath))//using defines a boundry for object outside of which object automatically destroyed
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))//culture sensitive
             {
                 var records = csv.GetRecords<Contacts>().ToList();
                 Console.WriteLine("Read data successfully from addresses csv.");

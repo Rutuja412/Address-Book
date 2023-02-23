@@ -7,7 +7,7 @@ namespace AddressBook
 {
     public class AddressbookFileIO
     {
-        public static void FileExists()
+        public static void FileExists()//check for file exist or not
         {
             String path = @"E:\RFP-245\Address-Book\AddressBook\ContactBook.txt";
             if (File.Exists(path))
